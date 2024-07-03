@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        background: linear-gradient(to right, aqua, red, blue);
+        color: transparent;
+        background-clip: text;
+    }
+
+    .time {
+        height: 40px;
+        width: 250px;
+        border: solid 5px;
+        border-image: linear-gradient(to right, red, aqua, blue)1;
+        background-color: black;
+        color: white;
+        padding: 5px;
+    }
+
+    .box {
+        height: 40px;
+        width: 250px;
+        background-color: rgb(22, 196, 219);
+        color: black;
+        border: 10px solid rgb(66, 121, 121);
+        border-radius: 20px;
+        font-size: 30px;
+    }
+</style>
+
+<body>
+    <!-- <center>
+
+        <div class="times">
+            <h1 id="demo1"></h1>
+        </div>
+    </center> -->
+    <br>
+    <center>
+        <div class="box">
+            <span id="one"></span>,
+            <span id="two"></span>
+            <span id="three"></span>,
+            <span id="four"></span>
+        </div>
+    </center>
+    <center>
+
+        <div class="time">
+            <h1 id="demo"></h1>
+        </div>
+    </center>
+
+    <script>
+        setInterval(abc);
+
+        function abc() {
+            let d = new Date().toLocaleTimeString();
+            document.getElementById("demo").innerHTML = d
+        }
+
+        setInterval(def);
+
+        // function def() {
+        //     let a = new Date().getFullYear();
+        //     document.getElementById("demo1").innerHTML = a
+        // }
+        // function def() {
+        //     let a = new Date().toLocaleDateString();
+        //     document.getElementById("demo1").innerHTML = a
+        // }
+        let dayy = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+        let d = new Date().getDay();
+        document.getElementById("one").innerHTML = dayy[d];
+
+        let monthh = ["jan", "feb", "mar", "apr", "May", "June", "July", "aug", "sept", "oct", "nov", "dec"]
+        let a = new Date();
+        document.getElementById("two").innerHTML = monthh[a.getMonth()];
+
+
+        let f = new Date().getDate();
+        document.getElementById("three").innerHTML = f;
+
+        function def() {
+            let a = new Date().getFullYear();
+            document.getElementById("four").innerHTML = a
+        }
+    </script>
+</body>
+
+</html>
